@@ -60,24 +60,24 @@ def crawl_product_data(product_name, value_code):
 
 
     df.columns = date_range
-    df.index = [ product_name + ' CV(10K tons) ', 
-                product_name + ' ACCV(10K tons)', 
-                product_name + ' YOY(%)', 
-                product_name + ' ACCG(%)']
+    df.index = [    ' CV(10K tons) ', 
+                    ' ACCV(10K tons)', 
+                    ' YOY(%)', 
+                    ' ACCG(%)']
 
     # Swap rows and columns, and reset index to make date as a column
     df = df.transpose().reset_index()
 
     # Rename columns
-    df.columns = ['Date',
-                product_name + ' CV(10K tons)', 
-                product_name + ' ACCV(10K tons)', 
-                product_name + ' YOY(%)', 
-                product_name + ' ACCG(%)']
+    df.columns = [  'Date',
+                    'CV(10K tons)', 
+                    'ACCV(10K tons)', 
+                    'YOY(%)', 
+                    'ACCG(%)']
                   
-    # Save the DataFrame to a CSV file in 'Data' directory
-    os.makedirs('Data', exist_ok=True)
-    file_name = os.path.join('Data_china_production', 'data_' + product_name.replace(' ', '_') + '.csv')
+    # Save the DataFrame to a CSV file in 'Data_cs_unclean' directory
+    os.makedirs('Data_cs_unclean', exist_ok=True)
+    file_name = os.path.join('Data_cs_unclean', 'data_' + product_name.replace(' ', '_') + '.csv')
     df.to_csv(file_name, index=False)
 
     return df
@@ -98,4 +98,3 @@ products = [
 
 for product in products:
     crawl_product_data(product["name"], product["value_code"])
-

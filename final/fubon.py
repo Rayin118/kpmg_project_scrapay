@@ -25,8 +25,8 @@ def crawl_and_save_data(file_name, A):
     data_dict = dict(zip(date_list, value_list))
 
     # 儲存到資料夾中
-    os.makedirs('Data_fubon_material', exist_ok=True)
-    file_path = os.path.join('Data_fubon_material', file_name)
+    os.makedirs('Data_fubon_material_unclean', exist_ok=True)
+    file_path = os.path.join('Data_fubon_material_unclean', file_name)
     with open(file_path, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['日期', 'CV'])  
@@ -35,13 +35,13 @@ def crawl_and_save_data(file_name, A):
 
 # 文件與對應A值
 data_files = [
-    ('熱軋中鋼盤價.csv', '200070'),
-    ('竹節鋼筋_南5分以上.csv', '200600'),
-    ('廢鋼_豐興.csv', '201190'),
-    ('鋼筋豐興廠交價.csv', '200960'),
-    ('倫敦鎳三個月期貨價.csv', '200990'),
-    ('倫敦鎳現貨價.csv', '200540'),
-    ('鎳倫敦LME_庫存量.csv', '201400')
+    ('熱軋中鋼盤價_三個月.csv', '200070'),
+    ('竹節鋼筋南5分以上_週.csv', '200600'),
+    ('廢鋼豐興_週.csv', '201190'),
+    ('鋼筋豐興廠交價_週.csv', '200960'),
+    ('倫敦鎳三個月期貨價_週.csv', '200990'),
+    ('倫敦鎳現貨價_週.csv', '200540'),
+    ('鎳倫敦LME_庫存量_日.csv', '201400')
 ]
 
 
