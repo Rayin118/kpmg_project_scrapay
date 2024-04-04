@@ -83,7 +83,7 @@ def crawl_product_data(product_name, value_code):
     return df
 
 
-# Call the function to fetch data for different products and save as CSV files
+# Call the function to fetch data for different products and save as CSV files,value_code為該品項的網頁代號
 products = [
     {"name": "鐵礦石", "value_code": "A020901"},
     {"name": "生鐵", "value_code": "A020913"},

@@ -47,9 +47,6 @@ def crawl_and_save_data(file_name, id_value):
     # Convert to DataFrame
     df = pd.DataFrame(extracted_data, columns=['date', 'value', 'change', 'change percentage'])
 
-    # Print DataFrame
-    # print(df)
-
     # Save DataFrame to CSV file
     output_folder = 'Data_XBI_chinadata_unclean'
     os.makedirs(output_folder, exist_ok=True)

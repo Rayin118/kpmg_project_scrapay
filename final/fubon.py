@@ -33,7 +33,7 @@ def crawl_and_save_data(file_name, A):
         for date, value in data_dict.items():
             writer.writerow([date, value])
 
-# 文件與對應A值
+# 文件與對應A值(A值為該網頁針對品項的搜尋代號)
 data_files = [
     ('熱軋中鋼盤價_三個月.csv', '200070'),
     ('竹節鋼筋南5分以上_週.csv', '200600'),
